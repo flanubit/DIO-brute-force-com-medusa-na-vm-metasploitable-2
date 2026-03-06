@@ -4,7 +4,7 @@ Um projeto do bootcamp **Riachuelo Cibersegurança** na plataforma de ensino **D
 1. ![Força bruta em FTP](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main?tab=readme-ov-file#computer-for%C3%A7a-bruta-em-ftp)
 2. ![Automação de tentativas em formulário Web](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main?tab=readme-ov-file#computer-automa%C3%A7%C3%A3o-de-tentativas-em-formul%C3%A1rio-web)
 3. ![Password Spraying em SMB](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main?tab=readme-ov-file#computer-password-spraying-em-smb)
-4. ![Mitigações](
+4. ![Mitigações](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main?tab=readme-ov-file#white_check_mark-mitiga%C3%A7%C3%B5es)
 
 ---
 ## :computer: Força bruta em FTP
