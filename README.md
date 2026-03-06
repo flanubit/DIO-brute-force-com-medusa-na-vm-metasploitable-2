@@ -1,11 +1,13 @@
-# Simulando um Ataque de Brute Force de Senhas com Medusa e Kali Linux
+# :round_pushpin: Simulando um Ataque de Brute Force de Senhas com Medusa e Kali Linux
 
-Um projeto do bootcamp Riachuelo Cibersegurança na plataforma de ensino DIO.
+Um projeto do bootcamp **Riachuelo Cibersegurança** na plataforma de ensino **DIO**.
 1. ![Força bruta em FTP](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/README.md#for%C3%A7a-bruta-em-ftp)
 2. ![Automação de tentativas em formulário Web](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main#automa%C3%A7%C3%A3o-de-tentativas-em-formul%C3%A1rio-web)
 3. ![Password Spraying em SMB](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main#password-spraying-em-smb)
+4. ![Mitigações](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main?tab=readme-ov-file#mitiga%C3%A7%C3%B5es)
 
-## Força bruta em FTP
+---
+## :computer: Força bruta em FTP
 
 Use **"msfadmin"** como usuário e senha na vm Metasploitable 2:
 
@@ -59,7 +61,8 @@ Que nos retornará com o usuário e senha que obeteve sucesso de login. Tente no
 
 ![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-05_20-23-29.png)
 
-## Automação de tentativas em formulário Web
+---
+## :computer: Automação de tentativas em formulário Web
 
 Abra o navegador e digite o ip na vm Metasploitable 2, e seguida navegue até o item DVWA:
 
@@ -99,7 +102,8 @@ Agora use as credencias encontradas e tente logar novamente. Se o login for bem 
 
 Tudo certo, você conseguiu acesso ao sistema web.
 
-## Password Spraying em SMB
+---
+## :computer: Password Spraying em SMB
 
 Vamos começar fazendo a enumeração dos serviços na vm Metasploitable 2 e extrair os usuários do serviço **SBM**, com os seguintes comandos:
 ~~~bash
@@ -128,4 +132,5 @@ smbclient -L //192.168.56.102 -U msfadmin
 
 Se o login for bem sucedido você verá um resultador similar a tela acima, tudo ok, deu certo!
 
+---
 ## Mitigações
