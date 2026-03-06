@@ -7,7 +7,7 @@ Um projeto do bootcamp Riachuelo Cibersegurança na plataforma de ensino DIO.
 
 ## Força bruta em FTP
 
-Use **msfadmin** como usuário e senha na vm Metasploitable 2:
+Use **"msfadmin"** como usuário e senha na vm Metasploitable 2:
 
 ![](https://github.com/flanubit/brute-force-com-medusa-na-vm-metasploitable-2-DIO/blob/main/images/Captura%20de%20tela%202026-03-05%20215519.png)
 
@@ -43,7 +43,7 @@ Você verá uma tela semelhante a essa abaixo se houver conexão, porém ainda n
 
 ![](https://github.com/flanubit/brute-force-com-medusa-na-vm-metasploitable-2-DIO/blob/main/images/Screenshot_2026-03-05_20-04-09.png)
 
-Vamos usar um ataque com dicionário contra o protocolo FTP criando nossa lista de palavras com o comando abaixo:
+Vamos usar um ataque com dicionário contra o protocolo FTP criando nossa lista de palavras com os comandos abaixo:
 ~~~bash
 echo -e "user\nmsfadmin\nadmin\nroot" > usuarios.txt
 echo -e "123456\npassword\nqwerty\nmsfadmin" > senhas.txt
@@ -61,7 +61,33 @@ Que nos retornará com o usuário e senha que obeteve sucesso de login. Tente no
 
 ## Automação de tentativas em formulário Web
 
-...
+Abra o navegador e digite o ip na vm Metasploitable 2, e seguida navegue até o item DVWA:
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_07-53-43.png)
+
+Você verá uma tela de login como esta abaixo:
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-12-45.png)
+
+Em seguida abra o modo de inspeção de código no navegador *(firefox neste o atalho é CTRL+SHIFT+E)* e entre com **"teste"** no campo de usuário e senha para testar o formulário de login e extrair os parâmetros usado no processo:
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-14-41.png)
+
+No nosso canto inferior esquerdo veremos os parâmetros que foram usados na tentativa de login. Informação importante que usaremos na sequência:
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-15-51.png)
+
+Agora faremos nosso novo dicionário de palavras para ser usado no ataque com dicinário, use os comandos:
+~~~bash
+echo -e "user\nmsfadmin\nadmin\nroot" > usuarios_web.txt
+echo -e "123456\npassword\nqwerty\nmsfadmin" > senhas_web.txt
+~~~
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-22-14.png)
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-44-06.png)
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-45-51.png)
 
 ## Password Spraying em SMB
 
