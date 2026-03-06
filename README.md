@@ -1,7 +1,7 @@
 # :round_pushpin: Simulando um Ataque de Brute Force de Senhas com Medusa e Kali Linux
 
 Um projeto do bootcamp **Riachuelo Cibersegurança** na plataforma de ensino **DIO**.
-1. Força bruta em FTP
+1. ![Força bruta em FTP](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2#computer-for%C3%A7a-bruta-em-ftp)
 2. ![Automação de tentativas em formulário Web](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/README.md#computer-automa%C3%A7%C3%A3o-de-tentativas-em-formul%C3%A1rio-web)
 3. Password Spraying em SMB
 4. Mitigações
