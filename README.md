@@ -3,9 +3,9 @@
 Um projeto do bootcamp **Riachuelo Cibersegurança** na plataforma de ensino **DIO**:
 
 1. [Força bruta em FTP](/README.md#computer-for%C3%A7a-bruta-em-ftp)
-2. Automação de tentativas em formulário Web
-3. Password Spraying em SMB
-4. Mitigações
+2. [Automação de tentativas em formulário Web](/README.md#computer-automa%C3%A7%C3%A3o-de-tentativas-em-formul%C3%A1rio-web)
+3. [Password Spraying em SMB](/README.md#computer-password-spraying-em-smb)
+4. [Mitigações](/README.md#white_check_mark-mitiga%C3%A7%C3%B5es)
 
 ---
 ## :computer: Força bruta em FTP
